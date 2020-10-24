@@ -1,0 +1,328 @@
+#include "iostream"
+#include "vector"
+using namespace std;
+
+void multi_2(vector<int> v) {
+    cout << "zadan1.1" << endl;
+    int i;
+    for (i = 0; i < v.size(); i++) {
+        v[i] = v[i] * 2;
+        cout << v[i] << " ";
+    }
+    cout << endl;
+}
+
+void reduce_a(vector <int> v) {
+    cout << "zadan1.2" << endl;
+    int i, a;
+    cout << "a= "; cin >> a;
+    for (i = 0; i < v.size(); i++) {
+        v[i] = v[i] - a;
+        cout << v[i] << " ";
+    }
+    cout << endl;
+}
+
+void div_on_first(vector<int> v) {
+    cout << "zadan1.3" << endl;
+    int i;
+    if (v[0] != 0) {
+        for (i = 0; i < v.size(); i++) {
+            cout << v[i] / v[0] << " ";
+        }
+    }
+    else {
+        for (i = 0; i < v.size(); i++) {
+            v[i] = 1;
+        }
+    }
+    cout << endl;
+}
+
+int sum(vector <int> v) {
+    cout << "zadan2.1" << endl;
+    int i, s;
+    s = 0;
+    for (i = 0; i < v.size(); i++) {
+        s = s + v[i];
+    }
+    cout << s << endl;
+    return(s);
+}
+int square_sum(vector<int> v) {
+    cout << "zadan2.2" << endl;
+    int i, s;
+    s = 0;
+    for (i = 0; i < v.size(); i++) {
+        s = s + (v[i] * v[i]);
+    }
+    cout << s << endl;
+    return(s);
+}
+
+int sum_six(vector<int> v) {
+    cout << "zadan2.3" << endl;
+    int i, s;
+    s = 0;
+    for (i = 0; i < 6; i++) {
+        s = s + v[i];
+    }
+    cout << s << endl;
+    return(s);
+}
+
+int sum_k(const vector <int> v, int k1, int k2) {
+    cout << "zadan2.4" << endl;
+    int i, s;
+    s = 0;
+    for (i = k1 - 1; i < k2; i++) {
+        s = s + v[i];
+    }
+    cout << s << endl;
+    return(s);
+}
+
+
+int mean(const vector<int>v) {
+    cout << "zadan2.5" << endl;
+    int i, s, k;
+    s = 0;
+    k = 0;
+    for (i = 0; i < v.size(); i++) {
+        s = s + v[i];
+        k = k + 1;
+    }
+    cout << s / k << endl;
+    return(s / k);
+}
+
+
+
+
+int mean_k(const vector<int> v, int s1, int s2) {
+    cout << "zadan2.6" << endl;
+    int i, s;
+    s = 0;
+    for (i = s1 - 1; i < s2; i++) {
+        s = s + v[i];
+    }
+    cout << s / (s2 - s1 + 1) << endl;
+    return(s / (s2 - s1 + 1));
+}
+
+
+void swap_el(vector <int> v1) {
+    cout << "zadan3" << endl;
+    int i, k;
+    for (i = 0; i < 3; i++) {
+        k = v1[i];
+        v1[i] = v1[20 - 3 + i];
+        v1[20 - 3 + i] = k;
+    }
+    for (i = 0; i < 20; i++) {
+        cout << v1[i] << " ";
+    }
+    cout << endl;
+}
+
+void remove_negative(vector <int> v) {
+    cout << "zadan4.1" << endl;
+    int i;
+    for (i = 0; i < v.size(); i++) {
+        if ((v[i] < 0)) {
+            v.erase(v.begin() + i);
+            break;
+        }
+    }
+    for (i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+    cout << endl;
+}
+
+
+void remove_last_even(vector<int> v) {
+    int i, k;
+    cout << "zadan4.2" << endl;
+    k = 0;
+    for (i = 0; i < v.size(); i++) {
+        if ((v[i] % 2) == 0) {
+            k = i;
+        }
+    }
+    v.erase(v.begin() + k);
+    for (i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+    cout << endl;
+}
+void N5(string gor) {
+    int l;
+    cout << "Zadan 5" << endl;
+    l = gor.length();
+    if (((l) % 2) == 0) {
+        cout << "Chet" << endl;
+    }
+    else {
+        cout << "Nechet" << endl;
+    }
+}
+
+void N6(string fam1, string fam2) {
+    cout << "Zadan 6" << endl;
+    if (fam1.length() > fam2.length()) {
+        cout << "true" << endl;
+    }
+    else
+    {
+        cout << "False" << endl;
+    }
+}
+
+void N7(string gor1, string gor2, string gor3) {
+    cout << "Zadan 7" << endl;
+    int l1, l2, l3;
+    l1 = gor1.length();
+    l2 = gor2.length();
+    l3 = gor3.length();
+    if ((l1 > l2) && (l1 > l3) && (l3 > l2)) {
+        cout << "the longest: " << gor1 << endl;
+        cout << "the_shortest: " << gor2 << endl;
+    }
+    if ((l1 > l2) && (l1 > l3) && (l3 < l2)) {
+        cout << "the longest: " << gor1 << endl;
+        cout << "the_shortest: " << gor3 << endl;
+    }
+    if ((l2 > l1) && (l2 > l3) && (l1 > l3)) {
+        cout << "the longest: " << gor2 << endl;
+        cout << "the_shortest: " << gor3 << endl;
+    }
+    if ((l2 > l1) && (l2 > l3) && (l1 < l3)) {
+        cout << "the longest: " << gor2 << endl;
+        cout << "the_shortest: " << gor1 << endl;
+    }
+    if ((l3 > l1) && (l3 > l2) && (l1 < l2)) {
+        cout << "the longest: " << gor3 << endl;
+        cout << "the_shortest: " << gor1 << endl;
+    }
+    if ((l3 > l1) && (l3 > l2) && (l1 > l2)) {
+        cout << "the longest: " << gor3 << endl;
+        cout << "the_shortest: " << gor2 << endl;
+    }
+
+
+}
+
+void N8(string slov, int m, int n) {
+    cout << "Zadan 8" << endl;
+    string st;
+    st = slov.substr(m - 1, n - m + 1);
+    cout << st << endl;
+}
+
+void N9(string slov) {
+    cout << "Zadan 9" << endl;
+    int i, l;
+    string s1, str;
+    s1 = "";
+    str = "";
+    l = slov.length();
+    for (i = 1; i <= l; i++) {
+        s1 = s1 + "*";
+    }
+    str = s1 + slov;
+    for (i = 1; i <= l; i++) {
+        str = str + "*";
+    }
+    cout << str << endl;
+}
+
+void N10(string slov) {
+    cout << "Zadan 10" << endl;
+    int i, l;
+    double kol, kola;
+    string s1;
+    kol = 0;
+    kola = 0;
+    s1 = "a";
+    l = slov.length();
+    for (i = 0; i < l; i++) {
+        if (slov.substr(i, 1) == s1) {
+            kol = kol + 1;
+            kola = kola + 1;
+        }
+        else {
+            kol = kol + 1;
+            kola = kola;
+        }
+    }
+    cout << (kola / kol) * 100 << endl;
+}
+
+int main()
+{
+    bool f;
+    int k, i, s, k1, k2, s1, s2, l, m, n;
+    string gor, fam1, fam2, gor1, gor2, gor3, slov, pred, word1,word2;
+    cout << "k= "; cin >> k;
+    vector <int> v(k);
+    for (int i = 0; i < v.size(); i++) {
+        v[i] = rand() % 100;
+        cout << v[i] << " ";
+    }
+    cout << endl;
+
+    multi_2(v);
+    reduce_a(v);
+    div_on_first(v);
+    sum(v);
+    square_sum(v);
+    sum_six(v);
+    cout << "k1= "; cin >> k1;
+    cout << "k2= "; cin >> k2;
+    sum_k(v, k1, k2);
+    mean(v);
+    cout << "s1= "; cin >> s1;
+    cout << "s2= "; cin >> s2;
+    mean_k(v, s1, s2);
+    vector <int> v1(20);
+    for (int i = 0; i < v1.size(); i++) {
+        v1[i] = rand();
+        cout << v1[i] << " ";
+    }
+    cout << endl;
+    swap_el(v1);
+    remove_negative(v);
+    remove_last_even(v);
+    cout << "Gorod "; cin >> gor;
+    N5(gor);
+
+    cout << "Fam1: "; cin >> fam1;
+    cout << "Fam2: "; cin >> fam2;
+    N6(fam1, fam2);
+
+    cout << "Gorod1: "; cin >> gor1;
+    cout << "Gorod2: "; cin >> gor2;
+    cout << "Gorod3: "; cin >> gor3;
+    N7(gor1, gor2, gor3);
+
+    cout << "Slovo: "; cin >> slov;
+    cout << "m= "; cin >> m; cout << "n= "; cin >> n;
+    N8(slov, m, n);
+    N9(slov);
+    N10(slov);
+    
+    
+//11
+    cout << "Pred: "; cin >> pred;
+    size_t pos;
+    pos = pred.find("can");
+    while ((pos ) != std::string::npos)
+    {
+       
+        pred.replace(pos,3, "new_word");
+    }
+    cout << pred;
+    system("pause");
+    return 0;
+}
